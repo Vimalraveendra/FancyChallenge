@@ -1,0 +1,72 @@
+.room-container {
+  border-bottom: 2px solid black;
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  padding: 5px 0px;
+  padding-right: 10px;
+}
+.address-container {
+  position: relative;
+  height: 57px;
+}
+.address {
+  margin-left: 7px;
+  position: absolute;
+}
+.description {
+  /* margin-left: 11rem; */
+  margin-left: 15.4rem;
+  padding-right: 10px;
+}
+.address h3 {
+  margin: 5px 0px;
+  font-size: 12px;
+  white-space: nowrap;
+  /* width: 55vw; */
+  width: 75vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: start;
+}
+.description h4,
+.address h4,
+.address h5 {
+  margin: 0px;
+  font-family: "Roboto";
+  font-size: 11.5px;
+  text-align: start;
+  /* margin-left: 5px; */
+  font-weight: 400;
+  line-height: 1.5;
+  /* letter-spacing: 1px; */
+}
+
+.address h3:hover {
+  overflow: visible;
+}
+
+@media screen and (max-width: 800px) {
+  .room-container {
+    flex-direction: column;
+  }
+  .description {
+    margin-left: 0.5rem;
+    padding-right: 10px;
+    margin-top: 0.2rem;
+  }
+  .star-rating {
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .room-container {
+    flex-direction: column;
+  }
+  .description {
+    margin-left: 0.5rem;
+    padding-right: 10px;
+    margin-top: 0.2rem;
+  }
+}
