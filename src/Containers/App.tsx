@@ -2,7 +2,7 @@ import React ,{useState,useEffect,createContext} from 'react';
 import './App.css';
 import HotelCollections from '../Components/HotelCollections/HotelCollections';
 import FilterRatingAndRooms from "../Components/FilterRatingAndRooms/FilterRatingAndRooms"
-// import { fetchData } from '../api/api';
+import { fetchData } from '../api/api';
 
 export interface AppContextInterface {
   num:number,
@@ -65,10 +65,10 @@ const [value,setValue]=useState<number>(0)
  useEffect(()=>{
   const url=`https://obmng.dbm.guestline.net/api/hotels?collection-id=OBMNG`
   const getHotels= async()=>{
-    // setHotels(await fetchData(url));
-    const response= await fetch(url)
-    const data = await response.json();
-    setHotels(data)
+    setHotels(await fetchData(url));
+    // const response= await fetch(url)
+    // const data = await response.json();
+    // setHotels(data)
   }
   getHotels();
 },[])
