@@ -36,7 +36,7 @@ To run this project, install it locally using npm.
 * React components & Typescript.
 * ES2015 & ES2016.
 * Code linter and formatter.
-* CSS
+* CSS,FlexBox.
 * libraries used React,Typescript,FontAwesome & google fonts.
 
 

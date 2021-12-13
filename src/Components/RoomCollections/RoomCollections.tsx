@@ -2,7 +2,7 @@ import {useState,useEffect,useContext} from "react";
 import Rooms from "../Rooms/Rooms";
 import "./RoomCollections.css"
 import { RoomContext } from "../../Containers/App";
-// import { fetchData } from "../../api/api";
+import { fetchData } from "../../api/api";
 
 
 
@@ -27,10 +27,10 @@ const RoomCollections=({id}:{id:string})=>{
     useEffect(()=>{
         const url=`https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${id}`
         const getHotels= async()=>{
-          //  setRooms((await fetchData(url)).rooms)
-          const response= await fetch(url)
-          const data = await response.json();
-          setRooms(data.rooms )
+           setRooms((await fetchData(url)).rooms)
+          // const response= await fetch(url)
+          // const data = await response.json();
+          // setRooms(data.rooms )
         }
         getHotels();
       },[id])
