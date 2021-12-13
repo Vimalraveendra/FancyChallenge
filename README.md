@@ -1,6 +1,6 @@
 
 # General info
-This project is built with React & Typescript inorder for the users to check availability of hotels & also filter the hotels based on the starRating as well as based on the capacity of Adults & children.
+This project is built with React & Typescript inorder for the users to check availability of hotels & also filter the hotels based on the starRating as well as based on the capacity of adults & children.
 
 
 # Setup
@@ -8,7 +8,7 @@ To run this project, install it locally using npm.
 
 1.Clone this repo.
 
-2.cd challenge.
+2.cd FancyChallenge.
 
 3.Run yarn install.
 
@@ -18,7 +18,7 @@ To run this project, install it locally using npm.
 
 1.created create-react-app boiler plate.
 
-2.created reusable components & containers.
+2.created reusable components,apis & containers.
 
 3.fetches the hotels data from the third party server while the app initializes.
 
