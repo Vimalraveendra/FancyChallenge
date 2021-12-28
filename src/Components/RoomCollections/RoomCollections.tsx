@@ -21,7 +21,7 @@ interface IOccupancy{
 const RoomCollections=({id}:{id:string})=>{
   const [rooms, setRooms] = useState<Array<IRoom>>([])
 
-  const {num,value} = useContext(RoomContext) 
+  const {adults,children} = useContext(RoomContext) 
   
    
     useEffect(()=>{
@@ -37,10 +37,10 @@ const RoomCollections=({id}:{id:string})=>{
     
       const filteredRooms= rooms.filter(({occupancy})=>{
         const {maxAdults,maxChildren}=occupancy;
-       if(num<1 && value<1){
+       if(adults<1 && children<1){
          return occupancy
        } 
-       return maxAdults>=num && maxChildren>=value
+       return maxAdults>=adults && maxChildren>=children
       });
      
     return(
