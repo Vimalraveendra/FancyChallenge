@@ -4,14 +4,14 @@
  export interface Props {
   rating:string|number,
   handleRating:(e:React.SyntheticEvent<HTMLInputElement>)=>void,
-  num:number,
-  value:number,
-  incrementNumber:()=>void,
-  decrementNumber:()=>void,
-  incrementValue:()=>void,
-  decrementValue:()=>void,
+  adults:number,
+  children:number,
+  incrementAdults:()=>void,
+  decrementAdults:()=>void,
+  incrementChildren:()=>void,
+  decrementChildren:()=>void,
 }
-const FilterRatingAndRooms:React.FC<Props>=({rating ,handleRating,num,value,incrementNumber,decrementNumber,incrementValue,decrementValue})=>{
+const FilterRatingAndRooms:React.FC<Props>=({rating ,handleRating,adults,children,incrementAdults,decrementAdults,incrementChildren,decrementChildren})=>{
 
     return(
         <div className="search-container">
@@ -39,16 +39,16 @@ const FilterRatingAndRooms:React.FC<Props>=({rating ,handleRating,num,value,incr
            }
            <div className="adults">
              <span>Adults:</span>
-             <span onClick={incrementNumber} className="add">&#43;</span>
-             <span>{num}</span>
-             <span onClick={decrementNumber} className="sub">&#8722;</span>
+             <span onClick={incrementAdults} className="add">&#43;</span>
+             <span>{adults}</span>
+             <span onClick={decrementAdults} className="sub">&#8722;</span>
             </div>
 
             <div className="children">
              <span>Children:</span>
-             <span onClick={incrementValue} className="add">&#43;</span>
-             <span>{value}</span>
-             <span onClick={decrementValue} className="sub">&#8722;</span>
+             <span onClick={incrementChildren} className="add">&#43;</span>
+             <span>{children}</span>
+             <span onClick={decrementChildren} className="sub">&#8722;</span>
             </div>
            </div>
    
