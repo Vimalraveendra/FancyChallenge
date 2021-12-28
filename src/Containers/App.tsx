@@ -5,11 +5,11 @@ import FilterRatingAndRooms from "../Components/FilterRatingAndRooms/FilterRatin
 import { fetchData } from '../api/api';
 
 export interface AppContextInterface {
-  num:number,
-  value:number,
+  adults:number,
+  children:number,
 }
 
-export const RoomContext = createContext<AppContextInterface>({num:0, value:0});
+export const RoomContext = createContext<AppContextInterface>({adults:0, children:0});
 
 
 
@@ -30,30 +30,30 @@ export interface IHotel{
 const App=()=> {
  const [hotels,setHotels] = useState<Array<IHotel>>([])
  const [rating ,setRating] =useState<string>("");
- const [num, setNum]= useState<number>(0);
-const [value,setValue]=useState<number>(0)
+ const [adults, setAdults]= useState<number>(0);
+const [children,setChildren]=useState<number>(0)
 
-    const incrementNumber =():void=>{
-      if(num<9){
-        setNum(num+1);
+    const incrementAdults =():void=>{
+      if(adults<9){
+        setAdults(adults+1);
       }
       
     }
-    const decrementNumber = ():void=>{
-      if(num>0){
-        setNum(num-1);
+    const decrementAdults = ():void=>{
+      if(adults>0){
+        setAdults(adults-1);
       }
     
   }
 
-  const incrementValue = ():void=>{
-    if(value<9){
-      setValue(value+1);
+  const incrementChildren = ():void=>{
+    if(children<9){
+      setChildren(children+1);
     }
   }
-  const decrementValue = ():void=>{
-    if(value>0){
-      setValue(value-1);
+  const decrementChildren = ():void=>{
+    if(children>0){
+      setChildren(children-1);
     }
   }
 
@@ -75,18 +75,18 @@ const [value,setValue]=useState<number>(0)
 const filteredHotels= hotels.filter(({starRating})=>starRating>=rating);
 
   return (
-    <RoomContext.Provider  value={{num:num,value:value}}>  
+    <RoomContext.Provider  value={{adults:adults,children:children}}>  
     <div className="App">
       <h1>Fancy Challenge</h1>
        <FilterRatingAndRooms 
        rating={rating} 
        handleRating={handleRating}  
-       value={value}
-       num={num}
-       incrementNumber={incrementNumber}
-       incrementValue={incrementValue}
-       decrementNumber={decrementNumber}
-       decrementValue={decrementValue}
+       adults={adults}
+       children={children}
+       incrementAdults={incrementAdults}
+       incrementChildren={incrementChildren}
+       decrementAdults={decrementAdults}
+       decrementChildren={decrementChildren}
        />
       <HotelCollections
        hotels={filteredHotels}
