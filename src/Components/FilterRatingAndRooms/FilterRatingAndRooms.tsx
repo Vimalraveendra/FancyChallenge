@@ -11,7 +11,7 @@
   incrementChildren:()=>void,
   decrementChildren:()=>void,
 }
-const FilterRatingAndRooms:React.FC<Props>=({rating ,handleRating,adults,children,incrementAdults,decrementAdults,incrementChildren,decrementChildren})=>{
+const FilterRatingAndRooms:React.FC<Props> =({rating ,handleRating,adults,children,incrementAdults,decrementAdults,incrementChildren,decrementChildren})=>{
 
     return(
         <div className="search-container">
