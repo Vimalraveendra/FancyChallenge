@@ -11,9 +11,9 @@
 # production
 /build
 
- ###Visualstudiocode###
- .vscode/
- .vscode/settings.json
+    ###Visualstudiocode###
+    .vscode/
+    .vscode/settings.json
 # misc
 .DS_Store
 .env.local

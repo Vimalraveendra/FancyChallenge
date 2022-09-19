@@ -22,9 +22,8 @@ const Slider:React.FC<Props> = ({images,name})=>{
  
     return(
         <section className="slider">
-  
-        {
-            images.map((image,index)=>{
+             {
+           images.length>1 ? images.map((image,index)=>{
                 return(
                     //   <div className={index===current?"slide-active":"slide"} key={index}>
                       <div className="slide" key={index}>
@@ -33,19 +32,19 @@ const Slider:React.FC<Props> = ({images,name})=>{
                       }
                       <span className="left-arrow" onClick={previousSlider}><i className="fas fa-angle-left"></i></span>
                       <span className="right-arrow" onClick={nextSlider}><i className="fas fa-angle-right"></i></span>
-                      </div>
-                      
-                      
-                  
+                      </div>    
                 )
-                    
-                
-                
-               
-            })
+           }):      <div className="slide">
+           {
+              <img  src={images[0].url} alt={images[0].alt!==""?images[0].alt:name}></img>
+           }
+         </div> 
+        
         }
+
         
         </section>
+                    
     )
 }
 
